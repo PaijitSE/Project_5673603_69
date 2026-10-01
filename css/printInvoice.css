@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7ede2; /* สีพื้นหลังโทนครีมอ่อน */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+/* ปุ่มกลับหน้าหลัก */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px 10px 40px;
+}
+
+.btn-back {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background-color: #333333;
+}
+
+.bth-back a {
+  text-decoration: none;
+  color: yellow;
+}
+
+/* Container เอกสารใบสั่งซื้อ */
+.invoice-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.invoice-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ส่วนหัว Header */
+.invoice-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  background-color: #e51212;
+  color: #ffeb3b;
+  font-weight: 900;
+  font-style: italic;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.company-details h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.1;
+}
+
+.company-details h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+
+/* บล็อกแสดงข้อความ Value Box สีเทาอ่อน */
+.value-box {
+  background-color: #e8e2dc;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* ส่วนเลขที่และวันที่สั่งซื้อ */
+.meta-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-row label {
+  font-size: 0.95rem;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.meta-info-section .value-box {
+  width: 180px;
+}
+
+/* ส่วนข้อมูลลูกค้า */
+.customer-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.customer-info-section .info-row label {
+  width: 100px;
+  text-align: right;
+}
+
+.customer-info-section .value-box {
+  flex: 1;
+}
+
+#memberNameBox,
+#phoneBox {
+  max-width: 350px;
+}
+
+/* ตารางรายการสินค้า */
+.table-section {
+  margin-bottom: 25px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1.5px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.invoice-table th {
+  background-color: #e3be91; /* สีน้ำตาลคาราเมลอ่อน */
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-bottom: 1.5px solid #000000;
+  border-right: 1.5px solid #000000;
+  text-align: center;
+}
+
+.invoice-table th:last-child {
+  border-right: none;
+}
+
+.invoice-table td {
+  height: 36px;
+  border-bottom: 1.5px solid #000000;
+  border-right: 1.5px solid #000000;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  color: #333333;
+  vertical-align: middle;
+}
+
+.invoice-table td:last-child {
+  border-right: none;
+}
+
+.invoice-table tr:last-child td {
+  border-bottom: none;
+}
+
+.col-code {
+  width: 18%;
+}
+.col-name {
+  width: 42%;
+}
+.col-qty {
+  width: 12%;
+}
+.col-price {
+  width: 14%;
+}
+.col-total {
+  width: 14%;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* ส่วนท้ายเอกสาร (สรุปการชำระเงิน) */
+.invoice-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+}
+
+.footer-left .info-row label {
+  width: 110px;
+}
+
+.footer-left .value-box {
+  flex: 1;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 40%;
+  align-items: flex-end;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.summary-row label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.summary-row .value-box {
+  width: 140px;
+}
+
+/* กล่องไฮไลต์สีแดงสำหรับรวมเงินสุทธิ */
+.value-box-highlight {
+  background-color: #ff2200; /* สีแดงสดตามภาพ */
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  height: 32px;
+  width: 140px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 15px;
+}

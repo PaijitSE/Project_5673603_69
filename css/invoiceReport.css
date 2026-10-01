@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f7ede2; /* สีพื้นหลังโทนครีมอ่อน */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   Header Navbar (แถบดำ/เทาเข้มด้านบน)
+   ========================================== */
+.navbar {
+  background-color: #693d25; /* สีแถบดำเข้มตามภาพ */
+  color: #ffffff;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  color: white;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.logo-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.system-title h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.system-title span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.navbar-right {
+  text-align: right;
+}
+
+.user-greeting {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  color: #ffffff;
+}
+
+.user-greeting strong {
+  color: #ffeb3b; /* ชื่อผู้ใช้เน้นสีเหลือง */
+}
+
+.nav-menu {
+  font-size: 1rem;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.nav-menu a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  color: yellow;
+  border-bottom: 3px solid red;
+}
+
+.nav-menu a.logout-link {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+/* ==========================================
+   Main Content Area
+   ========================================== */
+.main-container {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.report-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1050px;
+  border-radius: 12px;
+  padding: 25px 35px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Inside Card */
+.report-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.report-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.report-date-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* ==========================================
+   Table Section
+   ========================================== */
+.table-container {
+  width: 100%;
+  margin-bottom: 100px; /* ระยะห่างสำหรับส่วนสรุปท้ายตาราง */
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px 5px; /* เว้นระยะห่างของเซลล์ */
+}
+
+.report-table th.th-pill {
+  background-color: #b56000; /* สีน้ำตาลคาราเมล */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 5px 5px;
+  border-radius: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.report-table td {
+  background-color: #e8e2dc; /* เซลล์สีเทาอมน้ำตาลอ่อน */
+  border-radius: 10px;
+  padding: 5px 5px;
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.report-table td.text-center {
+  text-align: center;
+}
+
+.report-table td.text-right {
+  text-align: right;
+}
+
+/* ==========================================
+   Report Footer
+   ========================================== */
+.report-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+}
+
+.summary-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.summary-box {
+  background-color: #fde2e0; /* กล่องยอดรวมสีชมพูอ่อน */
+  border-radius: 8px;
+  padding: 6px 20px;
+  min-width: 150px;
+  text-align: right;
+}
+
+.summary-box span {
+  color: #d32f2f; /* ตัวเลขยอดรวมสีแดง */
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.currency-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}

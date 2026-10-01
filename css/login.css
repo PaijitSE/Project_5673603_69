@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #020024;
+  background: linear-gradient(
+    125deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(93, 9, 121, 1) 52%,
+    rgba(255, 0, 89, 0.39) 100%
+  );
+}
+
+/* การ์ด Container กลาง */
+.login-card {
+  background-color: #ffffff;
+  width: 60%;
+  max-width: 1000px;
+  border-radius: 24px;
+  display: flex;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 30px;
+  gap: 20px;
+}
+
+/* ฝั่งซ้าย: ฟอร์ม */
+.login-form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 38px;
+  background-color: #fcebeb;
+  border: none;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 2px #d32f2f;
+}
+
+/* Checkbox ลืมรหัสผ่าน */
+.forgot-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.forgot-group input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #d32f2f;
+  cursor: pointer;
+}
+
+.forgot-group label {
+  cursor: pointer;
+}
+
+/* ปุ่ม Login */
+.btn-login {
+  width: 100%;
+  height: 42px;
+  background-color: #e51818;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+  background-color: #b71c1c;
+}
+
+/* ลิงก์สมัครสมาชิก */
+.register-link {
+  margin-top: 30px;
+}
+
+.register-link a {
+  font-size: 0.9rem;
+  color: orange;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* ฝั่งขวา: ภาพประกอบ */
+.login-banner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}

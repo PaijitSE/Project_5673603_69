@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f5e1f2;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #310227;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 12pt;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+.navbar-menu span {
+  margin: 0 5px;
+}
+
+/* Main Container */
+.container {
+  width: 70vw;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* Banner Carousel */
+.banner {
+  position: relative;
+  background: url("../img/banner.png") no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 4px solid #492528;
+}
+
+.banner-content {
+  text-align: center;
+  color: #1a237e;
+}
+
+.banner-content h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.banner-content h1 {
+  font-size: 45px;
+  color: #d32f2f;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #fff;
+}
+
+.banner-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #d32f2f;
+}
+
+.banner-nav.prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.banner-nav.next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Section Label */
+.section-title {
+  text-align: center;
+  color: yellow;
+  font-weight: 500;
+  margin: 15px 0 8px 0;
+  font-size: 1.1rem;
+  background-color: #6a2e31;
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+}
+
+/* Recommended Products */
+.recommended-section {
+  background-color: #7f70b2;
+  border-radius: 0 0 20px 20px;
+  margin-top: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rec-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rec-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.rec-name {
+  color: black;
+  margin-top: 8px;
+  font-size: 11pt;
+  font-weight: 400;
+  width: 90%;
+  text-align: center;
+}
+
+.rec-price {
+  background-color: #9d1c1c;
+  color: white;
+  border-radius: 15px;
+  padding: 4px 15px;
+  margin-top: 8px;
+  font-size: 11pt;
+  font-weight: 600;
+  width: 90%;
+  text-align: center;
+}
+
+/* Search & Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  gap: 20px;
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 11pt;
+}
+
+.search-box button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.category-select {
+  width: 35%;
+}
+
+.category-select select {
+  width: 100%;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #e1c6d6;
+  cursor: pointer;
+  font-size: 11pt;
+}
+
+/* Main Product Grid Container */
+.products-container {
+  background-color: #e6bcc1;
+  border-radius: 20px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+  text-align: center;
+}
+
+.product-card img {
+  width: 60%;
+  height: 100px;
+  object-fit: contain;
+  margin: 5px auto;
+}
+
+.product-code {
+  color: #d32f2f;
+  font-weight: 800;
+  font-size: 11pt;
+  margin-bottom: 4px;
+}
+
+.product-info {
+  color: #555;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.product-info strong {
+  font-weight: 600;
+}

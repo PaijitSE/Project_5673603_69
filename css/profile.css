@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f7ede2; /* สีพื้นหลังโทนครีมอ่อน */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   Header Navbar (แถบดำ/เทาเข้มด้านบน)
+   ========================================== */
+.navbar {
+  background-color: #693d25; /* สีแถบดำเข้มตามภาพ */
+  color: #ffffff;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  color: white;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.logo-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.system-title h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.system-title span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.navbar-right {
+  text-align: right;
+}
+
+.user-greeting {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  color: #ffffff;
+}
+
+.user-greeting strong {
+  color: #ffeb3b; /* ชื่อผู้ใช้เน้นสีเหลือง */
+}
+
+.nav-menu {
+  font-size: 1rem;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.nav-menu a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  color: yellow;
+  border-bottom: 3px solid red;
+}
+
+.nav-menu a.logout-link {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+/* ==========================================
+   Main Content & Card
+   ========================================== */
+.main-container {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.profile-card {
+  background-color: #be5b38; /* สีน้ำตาลอิฐตามภาพ */
+  width: 100%;
+  max-width: 950px;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+.card-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Form Layout */
+.profile-form {
+  display: flex;
+  gap: 40px;
+}
+
+.form-left {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input Fields Style */
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group.align-top {
+  align-items: flex-start;
+}
+
+.form-group label {
+  width: 120px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  flex: 1;
+  background-color: #fdebe6; /* ชมพูอ่อนตามภาพ */
+  border: none;
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  outline: none;
+  color: #333333;
+}
+
+.form-group input[readonly] {
+  color: #666666;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+/* 2 Column Inline Inputs */
+.inline-inputs {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+}
+
+.inline-inputs input {
+  width: 50%;
+}
+
+/* Highlighted Inputs (ชื่อเข้าใช้ / รหัสผ่าน) */
+.form-group input.highlight-input {
+  background-color: #fcc28d; /* สีส้มอ่อนสำหรับชื่อเข้าใช้และรหัสผ่าน */
+}
+
+/* Avatar Upload Section */
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.avatar-title {
+  font-size: 1rem;
+}
+
+.circle-avatar img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #d8d8d8; /* สีเทาวงกลมตัวอย่าง */
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.btn-upload {
+  background-color: #212121; /* ปุ่มอัปโหลดสีดำแถบโค้ง */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 50%;
+}
+
+/* Submit Action */
+.form-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: #055432; /* ปุ่มปรับปรุงข้อมูลสีน้ำเงินเข้ม */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #002171;
+}

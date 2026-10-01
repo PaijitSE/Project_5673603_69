@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f8ecf4;
+}
+
+/* Header Navbar */
+.navbar {
+  background-color: #9a95a3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.title-group h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.title-group p {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: red;
+}
+
+.user-menu {
+  text-align: right;
+}
+
+.welcome-text {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 4px;
+}
+
+.nav-links a:hover {
+  color: yellow;
+  border-bottom: 3px solid red;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ==========================================
+   Main Content Area
+   ========================================== */
+.main-container {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.report-card {
+  background-color: #ffffff;
+  width: 70%;
+  border-radius: 16px;
+  padding: 25px 35px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ==========================================
+   Report Header Area
+   ========================================== */
+.report-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.company-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.company-logo {
+  background-color: #e51212;
+  color: #ffeb3b;
+  font-weight: 900;
+  font-style: italic;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.company-info h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.company-info h3 {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+}
+
+.report-date-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1rem;
+  color: #333333;
+}
+
+/* ==========================================
+   Table Section (ตารางการขาย)
+   ========================================== */
+.table-container {
+  width: 100%;
+  margin-bottom: 80px; /* เว้นระยะห่างด้านล่างสำหรับส่วนสรุปผล */
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px 5px; /* เว้นระยะห่างระหว่างเซลล์ตามรูปแบบในภาพ */
+}
+
+.report-table th.th-pill {
+  background-color: #635096; /* สีน้ำตาลคาราเมลตามภาพ */
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 5px 5px;
+  border-radius: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.report-table td {
+  background-color: #e8e2dc; /* สีเทาอมน้ำตาลอ่อนในแต่ละช่องแถวข้อมูล */
+  border-radius: 10px;
+  padding: 5px 5px;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #333;
+}
+
+.report-table td.text-center {
+  text-align: center;
+}
+
+.report-table td.text-right {
+  text-align: right;
+}
+
+/* ==========================================
+   Report Footer (ส่วนค้นหาและรวมเงิน)
+   ========================================== */
+.report-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-section label {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.custom-select {
+  background-color: #ccb5b5; /* สีเทาอมชมพูของ Dropdown */
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.btn-search {
+  background-color: #d32f2f; /* ปุ่มค้นหาสีแดง */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+  background-color: #9a0007;
+}
+
+.summary-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.summary-box {
+  background-color: #fde2e0; /* กล่องแสดงยอดรวมสีชมพูอ่อน */
+  border-radius: 8px;
+  padding: 6px 20px;
+  min-width: 140px;
+  text-align: right;
+}
+
+.summary-box span {
+  color: #d32f2f; /* ตัวเลขยอดรวมสีแดง */
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.currency-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000000;
+}

@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f8ecf4;
+}
+
+/* Header Navbar */
+.navbar {
+  background-color: #9a95a3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.title-group h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.title-group p {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: red;
+}
+
+.user-menu {
+  text-align: right;
+}
+
+.welcome-text {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  display: block;
+  color: red;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 4px;
+}
+
+.nav-links a:hover {
+  color: yellow;
+  border-bottom: 3px solid red;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-container {
+  width: 70%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add {
+  background-color: #2e7d32;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-edit {
+  background-color: #3333ff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 50px;
+}
+.btn-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 50px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12pt;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #635096;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal-card {
+  background-color: #4d647a;
+  color: white;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: yellow;
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+}
+
+.form-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  width: 120px;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex: 1;
+  padding: 6px 5px;
+  border-radius: 6px;
+  border: none;
+  background-color: #fceddf;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.inline-inputs {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.inline-inputs input,
+.inline-inputs select {
+  width: 50%;
+}
+
+/* Image Upload Circle */
+.image-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.circle-avatar img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-upload {
+  background-color: #212121;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background-color: #fbc02d;
+  color: #333;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 150px;
+}
+
+.btn-save {
+  background-color: #2979ff;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 150px;
+}
