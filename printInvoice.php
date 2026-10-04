@@ -6,11 +6,12 @@ include('dataInvoiceDetail.php');
 
 $rowInvoice = mysqli_fetch_assoc($resultInvoice);
 
-if ((!isset($_SESSION['role'])) || ($_SESSION['role'] !== "1")) {
-    header("Location: login.php");
-    exit();
-}
-$fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
+// if ((!isset($_SESSION['role'])) || ($_SESSION['role'] !== "1")) {
+//     header("Location: login.php");
+//     exit();
+// }
+// $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
+// 
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -29,7 +30,8 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
 
     <!-- ปุ่มกลับหน้าหลัก (มุมขวาบน) -->
     <div class="top-bar">
-        <button type="button" class="btn-back" id="backBtn"><a href="profile.php?cid=<?= $_SESSION['id'] ?>">กลับหน้าหลัก</a></button>
+        <button type="button" class="btn print" id="printBtn">พิมพ์ใบสั่งซื้อ</button>
+        <button type="button" class="btn back" id="backBtn">กลับหน้าหลัก</button>
     </div>
 
     <!-- การ์ดเอกสารใบเสร็จ (กระดาษสีขาว) -->
@@ -144,7 +146,8 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
         </div>
     </main>
 
-    <script src="printInvoice.js"></script>
+    <script src="js/printInvoice.js"></script>
+
 </body>
 
 </html>

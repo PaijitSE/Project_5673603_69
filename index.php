@@ -33,7 +33,7 @@ include('dataProductType.php');
         <div class="navbar-menu">
             <a href="#">หน้าหลัก</a>
             <span>|</span>
-            <a href="login.php" style="color: #ffeb3b;">เข้าสู่ระบบ</a>
+            <a href="login.php">เข้าสู่ระบบ</a>
         </div>
     </div>
 

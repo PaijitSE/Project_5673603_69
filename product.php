@@ -4,6 +4,7 @@ require_once('db.php');
 include('dataProduct.php');
 include('dataProductType.php');
 
+echo 'OK';
 
 if ((!isset($_SESSION['role'])) || ($_SESSION['role'] !== "2")) {
     header("Location: login.php");
@@ -27,25 +28,9 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="brand">
-            <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="Lego Logo">
-            </div>
-            <div class="title-group">
-                <h1>SE - Store System</h1>
-                <p>: ส่วนงานเจ้าหน้าที่</p>
-            </div>
-        </div>
-        <div class="user-menu">
-            <span class="welcome-text">สวัสดี <?= htmlspecialchars($fullname) ?> </span>
-            <nav class="nav-links">
-                <a href="product.php">จัดการสินค้า</a> |
-                <a href="saleReport.php">รายงานการขาย</a> |
-                <a href="index.php" class="logout">ออกจากระบบ</a>
-            </nav>
-        </div>
-    </header>
+
+    <!-- แถบเมนูด้านบน (Navbar) -->
+    <?php include('headerAdmin.php'); ?>
 
     <main class="main-container">
         <div class="action-header">
@@ -78,7 +63,9 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
                                 <td><?= htmlspecialchars($row['Product_price']) ?></td>
                                 <td>
                                     <div class="action-buttons">
-                                        <button class="btn-edit" data-product="<?php echo htmlspecialchars(json_encode($row, JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8'); ?>">แก้ไข</button>
+                                        <button class="btn-edit"
+                                            data-product="<?php echo htmlspecialchars(json_encode($row, JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8'); ?>">
+                                            แก้ไข</button>
                                         <button class=" btn-delete" onclick="deleteData('<?= $row['Product_id']; ?>')">ลบ</button>
                                     </div>
                                 </td>
@@ -166,7 +153,7 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
                         <p>รูปสินค้า</p>
                         <input type="hidden" id="imageOld" name="imageOld" value="">
                         <div class="circle-avatar" id="avatarPreview"><img src="" id="productImg" alt="Product Image"></div>
-                        <input type="file" id="imageInput" name="image" accept="image/*" class="hidden">
+                        <input type="file" id="imageInput" name="image" accept="image/*" class="hidden" onchange="imgSelect(this);">
                         <button type="button" class="btn btn-upload" onclick="document.getElementById('imageInput').click()">อัปโหลดรูป</button>
                     </div>
 

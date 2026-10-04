@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Kanit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Mitr", sans-serif;
 }
 
 body {
@@ -20,24 +20,27 @@ body {
   padding: 20px 40px 10px 40px;
 }
 
-.btn-back {
-  background-color: #000000;
-  color: #ffffff;
+.btn {
+  background-color: #2c2626;
   border: none;
   padding: 8px 24px;
+  margin-bottom: 10px;
   border-radius: 8px;
   font-size: 0.95rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   cursor: pointer;
+  color: #f8f8f3;
 }
 
-.btn-back:hover {
-  background-color: #333333;
+.back {
+  background-color: #2c2626;
+  color: #f8f8f3;
 }
 
-.bth-back a {
-  text-decoration: none;
-  color: yellow;
+.print {
+  background-color: green;
+  color: #f8f8f3;
+  margin-right: 10px;
 }
 
 /* Container เอกสารใบสั่งซื้อ */
@@ -104,7 +107,7 @@ body {
   align-items: center;
   padding: 0 12px;
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #333333;
 }
 

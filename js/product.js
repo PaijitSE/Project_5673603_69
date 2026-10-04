@@ -98,33 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     // ดึงค่าจากฟอร์มเพื่อนำไปประมวลผลต่อ (เช่น ส่ง API)
-    // const formElement = document.getElementById("productForm");
     const formData = new FormData(productForm);
-    const action = document.getElementById("m_action").value;
 
-    // console.log(Object.fromEntries(formData));
-    // alert("goto productProcess.php to=" + action);
-
-    fetch("productProcess.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "success") {
-          alert(data.message);
-          toggleModal(false);
-          window.location.reload();
-        } else {
-          console.log(data.message);
-          alert("ข้อผิดพลาด: " + data.message);
-          console.log(data.message);
-        }
+    if (confirm("ยืนยันการจัดการรายการสินค้า ?")) {
+      fetch("productProcess.php", {
+        method: "POST",
+        body: formData,
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์!");
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            alert(data.message);
+            toggleModal(false);
+            window.location.reload();
+          } else {
+            console.log(data.message);
+            alert("ข้อผิดพลาด: " + data.message);
+            console.log(data.message);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์!");
+        });
+    }
   });
 });
 
@@ -154,5 +151,16 @@ function deleteData(productId) {
         console.error("Error:", error);
         alert("เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์!");
       });
+  }
+}
+
+function imgSelect(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      document.getElementById("productImg").src = e.target.result;
+    };
+    reader.readAsDataURL(input.files[0]);
   }
 }

@@ -38,10 +38,12 @@ body {
   color: white;
   text-decoration: none;
   font-size: 12pt;
+  font-weight: normal;
 }
 
 .navbar-menu a:hover {
-  text-decoration: underline;
+  color: yellow;
+  font-weight: bolder;
 }
 
 .navbar-menu span {

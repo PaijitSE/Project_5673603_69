@@ -24,13 +24,13 @@
 
       <form id="loginForm" action="loginProcess.php" method="POST">
         <div class="input-group">
-          <label for="username">ชื่อเข้าใช้ระบบ/ e-mail</label>
-          <input type="text" id="username" name="username" value="E0005" required autocomplete="off">
+          <label for="username">ชื่อเข้าใช้ระบบ</label>
+          <input type="text" id="username" name="username" value="C0003" required autocomplete="off">
         </div>
 
         <div class="input-group">
           <label for="password">รหัสผ่าน</label>
-          <input type="password" id="password" name="password" value="qwerty" required>
+          <input type="password" id="password" name="password" value="1234" required>
         </div>
 
         <div class="forgot-group">
@@ -42,7 +42,7 @@
       </form>
 
       <div class="register-link">
-        <a href="index.php">กลับไปหน้าหลัก..., คลิก!</a>
+        <a href="index.php" type="botton"><- กลับไปหน้าหลัก!</a>
       </div>
     </div>
 
@@ -50,7 +50,6 @@
     <div class="login-banner">
       <img src="img/login.jpg" alt="World Consumer Rights Day Illustration">
     </div>
-
   </div>
 
   <script src="js/login.js"></script>

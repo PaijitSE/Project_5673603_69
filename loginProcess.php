@@ -7,12 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username  = trim($_POST["username"]);
     $password  = trim($_POST["password"]);
 
-    echo $username . "<br>" . $password . "<br>";
-
     $sql = "SELECT * FROM checkUsers2 WHERE Emp_UN = '$username' 
             AND Emp_PW = '$password'";
-
-    echo $sql . "<br>";
 
     $resultsql =  mysqli_query($conn, $sql);
 
@@ -24,21 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["fullname"] = $row["Emp_prename"] . $row["Emp_firstname"] . ' ' . $row["Emp_lastname"];
         $_SESSION["role"]     = $row["Roles"];
 
-        echo "id=" . $_SESSION["id"] . "<br>";
-        echo "name=" . $_SESSION["fullname"] . "<br>";
-        echo "role=" . $_SESSION["role"];
-
-        if ($_SESSION["role"] === "1") {
-            echo "<script>window.location = 'profile.php?cid=" . $row["Emp_id"] . "';</script>";
-        } else {
-            echo "<script> window.location = 'product.php';</script>";
-        }
+        echo json_encode(["status" => "success", "message" => $row["Roles"], "id" => $row["Emp_id"]]);
+        exit();
     } else {
         //กรณีไม่พบ Account
-        echo "<script>alert('ข้อมูลไม่ถูกต้อง'); 
-                     window.location = 'index.php';
-              </script>";
+        echo json_encode(["status" => "error", "message" => "ไม่พบสิทธิ์เข้าใช้งาน !"]);
+        exit();
     }
 } else {
-    header("location : index.php");
+    echo json_encode(["status" => "error", "message" => "E-ไม่อนุญาตให้เข้าถึงระบบ"]);
+    exit();
 }

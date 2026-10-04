@@ -81,7 +81,7 @@ body {
    Main Content Area
    ========================================== */
 .main-container {
-  padding: 30px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -92,7 +92,7 @@ body {
   background-color: #ffffff;
   width: 70%;
   border-radius: 16px;
-  padding: 25px 35px 30px;
+  padding: 25px 35px 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -105,9 +105,9 @@ body {
 .report-header {
   position: relative;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .company-brand {
@@ -139,7 +139,7 @@ body {
   font-size: 1.2rem;
   color: #000000;
   font-weight: 500;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .report-date-info {
@@ -155,7 +155,9 @@ body {
    ========================================== */
 .table-container {
   width: 100%;
-  margin-bottom: 80px; /* เว้นระยะห่างด้านล่างสำหรับส่วนสรุปผล */
+  /* margin-bottom: 80px; เว้นระยะห่างด้านล่างสำหรับส่วนสรุปผล */
+  height: 67vh;
+  overflow: auto;
 }
 
 .report-table {
@@ -179,9 +181,9 @@ body {
   background-color: #e8e2dc; /* สีเทาอมน้ำตาลอ่อนในแต่ละช่องแถวข้อมูล */
   border-radius: 10px;
   padding: 5px 5px;
-  font-size: 0.9rem;
-  font-weight: 200;
-  color: #333;
+  font-size: 1rem;
+  font-weight: 300;
+  color: black;
 }
 
 .report-table td.text-center {
@@ -223,7 +225,15 @@ body {
   font-size: 0.9rem;
   outline: none;
   cursor: pointer;
-  min-width: 150px;
+  /* min-width: 150px; */
+}
+
+.month {
+  width: 150px;
+}
+
+.year {
+  width: 100px;
 }
 
 .btn-search {
@@ -272,4 +282,15 @@ body {
   font-size: 1.1rem;
   font-weight: 800;
   color: #000000;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  border-bottom: 1px solid black;
+  text-decoration: none;
 }

@@ -63,11 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SESSION['role'] === '2') {
     if ($action === 'add') {
         $sql = "INSERT INTO product (Product_id, Product_name, Product_type, Product_count, Product_unit, Product_cost, Product_price, Product_low, Product_high, Product_detail, Product_status, Product_picture) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql2 = "INSERT INTO product (Product_id, Product_name, Product_type, Product_count, Product_unit, Product_cost, Product_price, Product_low, Product_high, Product_detail, Product_status, Product_picture) 
+                VALUES ('$productId', '$productName', '$categoryCode', $stockQty, '$unitName', $costPrice, $sellPrice, $minQty, $maxQty, '$description', '$statusSelect', '$target_file')";
         $result = $conn->prepare($sql);
         $result->bind_param("sssisddiisss", $productId, $productName, $categoryCode, $stockQty, $unitName, $costPrice, $sellPrice, $minQty, $maxQty, $description, $statusSelect, $target_file);
 
         if ($result->execute()) {
-            echo json_encode(["status" => "success", "message" => "1-เพิ่มสินค้าใหม่และรูปภาพสำเร็จ!"]);
+            echo json_encode(["status" => "success", "message" => "1-เพิ่มสินค้าใหม่และรูปภาพสำเร็จ!" . $sql2]);
         } else {
             echo json_encode(["status" => "error", "message" => "1-เกิดข้อผิดพลาด เพิ่มสินค้าไม่สำเร็จ: " . $conn->error]);
         }

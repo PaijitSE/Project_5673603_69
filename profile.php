@@ -27,29 +27,8 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
 
 <body>
 
-  <!-- แถบเมนูด้านบน (Header Navbar) -->
-
-  <header class="navbar">
-    <div class="navbar-left">
-      <div class="logo-box">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="Lego Logo">
-      </div>
-      <div class="system-title">
-        <h1>SE - Store System</h1>
-        <span>: ส่วนงานสมาชิก</span>
-      </div>
-    </div>
-    <div class="navbar-right">
-      <div class="user-greeting">
-        สวัสดี <strong><?php echo htmlspecialchars($fullname); ?></strong>
-      </div>
-      <nav class="nav-menu">
-        <a href="profile.php?cid=<?= $row["Cust_id"]; ?>">ข้อมูลส่วนตัว</a> |
-        <a href="invoiceReport.php?cid=<?= $row["Cust_id"]; ?>">ประวัติการสั่งซื้อ</a> |
-        <a href="index.php" class="logout-link">ออกจากระบบ</a>
-      </nav>
-    </div>
-  </header>
+  <!-- แถบเมนูด้านบน (Navbar) -->
+  <?php include('headerMember.php'); ?>
 
   <!-- ส่วนเนื้อหาหลัก (การ์ดสีน้ำตาลอิฐ) -->
   <main class="main-container">
@@ -63,7 +42,7 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
           <div class="form-group">
             <label for="memberId">รหัสสมาชิก</label>
 
-            <input type="text" id="memberId" name="memberId" value="<?= $row["Cust_id"]; ?>">
+            <input type="text" id="memberId" name="memberId" value="<?= $row["Cust_id"]; ?>" readonly>
 
           </div>
 
@@ -87,21 +66,21 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
           <div class="form-group">
             <label for="memberLevel">ระดับสมาชิก</label>
 
-            <input type="text" id="memberLevel" name="memberLevel" value="Gold Member" readonly value="<?= $row["Cust_level"] ?>">
+            <input type="text" id="memberLevel" name="memberLevel" readonly value="<?= $row["Cust_level"] . '-' . $row["Lev_name"] ?>">
 
           </div>
 
           <div class="form-group align-top">
             <label for="address">ที่อยู่</label>
 
-            <textarea id="address" name="address" rows="4"><?= $row["Cust_address"] ?>"</textarea>
+            <textarea id="address" name="address" rows="4"><?= $row["Cust_address"] ?></textarea>
 
           </div>
 
           <div class="form-group">
             <label for="birthDate">วันเดือนปีเกิด</label>
 
-            <input type="date" id="birthDate" name="birthDate" value="<?= $row["Cust_birth"] ?>">
+            <input type="text" id="birthDate" name="birthDate" value="<?= $row["Cust_birth"] ?>">
 
           </div>
 
@@ -115,7 +94,7 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
           <div class="form-group">
             <label for="username">ชื่อเข้าใช้ระบบ</label>
 
-            <input type="text" id="username" name="username" class="highlight-input" value="<?= $row["Cust_UN"] ?>">
+            <input type="text" id="username" name="username" class="highlight-input" value="<?= $row["Cust_UN"] ?>" readonly>
 
           </div>
 

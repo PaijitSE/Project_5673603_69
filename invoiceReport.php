@@ -25,27 +25,7 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
 <body>
 
     <!-- แถบเมนูด้านบน (Navbar) -->
-    <header class="navbar">
-        <div class="navbar-left">
-            <div class="logo-box">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="Lego Logo">
-            </div>
-            <div class="system-title">
-                <h1>SE - Store System</h1>
-                <span>: ส่วนงานสมาชิก</span>
-            </div>
-        </div>
-        <div class="navbar-right">
-            <div class="user-greeting">
-                สวัสดี <strong><?php echo htmlspecialchars($fullname); ?></strong>
-            </div>
-            <nav class="nav-menu">
-                <a href="profile.php<?= $row["Cust_id"]; ?>">ข้อมูลส่วนตัว</a> |
-                <a href="invoiceReport.php<?= $row["Cust_id"]; ?>">ประวัติการสั่งซื้อ</a> |
-                <a href="index.php" class="logout-link">ออกจากระบบ</a>
-            </nav>
-        </div>
-    </header>
+    <?php include('headerMember.php'); ?>
 
     <!-- เนื้อหาหลัก (การ์ดรายงานสีขาว) -->
     <main class="main-container">
@@ -82,16 +62,16 @@ $fullname = $_SESSION['fullname'] ?? '-ไม่ระบุ-';
                                 <tr>
                                     <td class="text-center"><a href="printInvoice.php?cid=<?= $Cid  ?>&inv_id=<?= $row['Inv_no']  ?>"><?= htmlspecialchars($row['Inv_no']) ?></a></td>
                                     <td class="text-center"><?= htmlspecialchars($row['Inv_date']) ?></td>
-                                    <td><?php switch ($row['Inv_shipping']) {
-                                            case '0':
-                                                echo "เตรียมจัดส่ง";
-                                                break;
-                                            case '1':
-                                                echo "จัดส่งแล้ว";
-                                                break;
-                                            default:
-                                                echo "รับสินค้าแล้ว";
-                                        } ?></td>
+                                    <td class="text-center"><?php switch ($row['Inv_shipping']) {
+                                                                case '0':
+                                                                    echo "เตรียมจัดส่ง";
+                                                                    break;
+                                                                case '1':
+                                                                    echo "จัดส่งแล้ว";
+                                                                    break;
+                                                                default:
+                                                                    echo "รับสินค้าแล้ว";
+                                                            } ?></td>
                                     <td class="text-center"><?= htmlspecialchars($row['Qty']) ?></td>
                                     <td class="text-right"><?= number_format($row['Amount'], 2) ?></td>
                                     <td class="text-center">0.00</td>

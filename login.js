@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ตรวจสอบความถูกต้องของข้อมูลก่อนส่งฟอร์ม (Form Validation)
   loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
     const usernameInput = document.getElementById("username").value.trim();
     const passwordInput = document.getElementById("password").value;
 
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadWorkPage(roles, cid) {
   if (roles === "1") {
-    window.location = "profile.php?cid=" + cid;
+    window.location = "profile.php?cid=" + data.id;
   } else {
     window.location = "product.php";
   }
