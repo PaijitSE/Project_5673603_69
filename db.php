@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "std67101";
-$pass = "pro67101";
+$user = "xx";
+$pass = "xx";
 $db   = "SEStoreDB_Prototype";
 
 $conn = new mysqli($host, $user, $pass, $db);
